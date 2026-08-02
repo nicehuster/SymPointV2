@@ -83,8 +83,8 @@ __global__ void knnquery_cuda_kernel(int m, int nsample, const float *__restrict
     float new_y = new_xyz[1];
     float new_z = new_xyz[2];
 
-    float best_dist[100];
-    int best_idx[100];
+    float best_dist[KNNQUERY_MAX_NEIGHBORS];
+    int best_idx[KNNQUERY_MAX_NEIGHBORS];
     for(int i = 0; i < nsample; i++){
         best_dist[i] = 1e10;
         best_idx[i] = start;
